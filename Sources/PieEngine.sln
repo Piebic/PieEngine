@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{35AD1CF6-8A9F-482B-934C-763DDBF452EC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PieEngine", "PieEngine\PieEngine.vcxproj", "{C11CB8BA-C008-4764-A271-A86B8378C522}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C11CB8BA-C008-4764-A271-A86B8378C522}.Debug|x64.ActiveCfg = Debug|x64
+		{C11CB8BA-C008-4764-A271-A86B8378C522}.Debug|x64.Build.0 = Debug|x64
+		{C11CB8BA-C008-4764-A271-A86B8378C522}.Release|x64.ActiveCfg = Release|x64
+		{C11CB8BA-C008-4764-A271-A86B8378C522}.Release|x64.Build.0 = Release|x64
+		{35AD1CF6-8A9F-482B-934C-763DDBF452EC}.Debug|x64.ActiveCfg = Debug|x64
+		{35AD1CF6-8A9F-482B-934C-763DDBF452EC}.Debug|x64.Build.0 = Debug|x64
+		{35AD1CF6-8A9F-482B-934C-763DDBF452EC}.Release|x64.ActiveCfg = Release|x64
+		{35AD1CF6-8A9F-482B-934C-763DDBF452EC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A286F931-0F3D-4B04-9781-3AEACBAFB817}
+	EndGlobalSection
+EndGlobal
