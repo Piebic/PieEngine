@@ -1,0 +1,4 @@
+[02:12:29] EntryPoint.h:[main, 17 line] [App]: <T> Hello, app trace
+[02:12:29] EntryPoint.h:[main, 18 line] [App]: <I> Hello, app info
+[02:12:29] EntryPoint.h:[main, 19 line] [App]: <W> Hello, app warn
+[02:12:29] EntryPoint.h:[main, 20 line] [App]: <E> Hello, app error
