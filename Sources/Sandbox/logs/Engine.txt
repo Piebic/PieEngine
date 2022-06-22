@@ -1,4 +1,4 @@
-[02:12:29] EntryPoint.h:[main::12] <Engine>: <T> Hello, pie trace
-[02:12:29] EntryPoint.h:[main::13] <Engine>: <I> Hello, pie info
-[02:12:29] EntryPoint.h:[main::14] <Engine>: <W> Hello, pie warn
-[02:12:29] EntryPoint.h:[main::15] <Engine>: <E> Hello, pie error
+[00:17:53] EntryPoint.h:[main: 12 line] [Engine]: <T> Hello, pie trace
+[00:17:53] EntryPoint.h:[main: 13 line] [Engine]: <I> Hello, pie info
+[00:17:53] EntryPoint.h:[main: 14 line] [Engine]: <W> Hello, pie warn
+[00:17:53] EntryPoint.h:[main: 15 line] [Engine]: <E> Hello, pie error
