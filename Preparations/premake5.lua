@@ -14,6 +14,7 @@ engineDirs = {}
 engineDirs["Root"] = "%{rootDirs.Sources}/PieEngine"
 engineDirs["App"] = "%{rootDirs.Sources}/PieEngine/App"
 engineDirs["Core"] = "%{rootDirs.Sources}/PieEngine/Core"
+engineDirs["Events"] = "%{rootDirs.Sources}/PieEngine/Events"
 engineDirs["Foundation"] = "%{rootDirs.Sources}/PieEngine/Foundation"
 
 sandboxDirs = {}
@@ -55,8 +56,8 @@ project "PieEngine"
     targetdir ("%{rootDirs.Builds}/Output/%{outputDirs.Engine}")
     objdir ("%{rootDirs.Builds}/Intermediate/%{outputDirs.Engine}")
 
-    -- pchheader "Acrpch.h"
-    -- pchsource "PieEngine/src/Acrpch.cpp"
+    pchheader "Pie.h"
+    pchsource "%{engineDirs.Root}/Pie.cpp"
 
     files
     {
@@ -66,6 +67,8 @@ project "PieEngine"
         "%{engineDirs.App}/**.cpp",
         "%{engineDirs.Core}/**.h",
         "%{engineDirs.Core}/**.cpp",
+        "%{engineDirs.Events}/**.h",
+        "%{engineDirs.Events}/**.cpp",
         "%{engineDirs.Foundation}/**.h",
         "%{engineDirs.Foundation}/**.cpp"
         -- "%{prj.name}/ThirdParty/stb_image/**.h",
@@ -83,6 +86,7 @@ project "PieEngine"
         "%{engineDirs.Root}",
         "%{engineDirs.App}",
         "%{engineDirs.Core}",
+        "%{engineDirs.Events}",
         "%{engineDirs.Foundation}",
         "%{rootDirs.Frameworks}/spdlog/include"
         -- "%{IncludeDir.GLFW}",

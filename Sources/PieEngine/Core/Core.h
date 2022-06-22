@@ -13,3 +13,5 @@
 	#error Platform not supported
 
 #endif // WIN_API
+
+#define BIT(x) (1 << x)
