@@ -5,6 +5,7 @@ outputDirs = {}
 outputDirs["Engine"] = "PieEngine/%{cfg.buildcfg}"
 outputDirs["Sandbox"] = "Sandbox/%{cfg.buildcfg}"
 outputDirs["GLFW"] = "GLFW/%{cfg.buildcfg}"
+outputDirs["GLAD"] = "GLAD/%{cfg.buildcfg}"
 
 rootDirs = {}
 rootDirs["Builds"] = "../Builds"
@@ -38,13 +39,13 @@ workspace "PieEngine"
 -- Include directories relative to root folder (solution directory)
 includeDirs = {}
 includeDirs["GLFW"] = "%{rootDirs.Frameworks}/glfw/include"
--- includeDirs["Glad"] = "PieEngine/ThirdParty/Glad/include"
+includeDirs["Glad"] = "%{rootDirs.Frameworks}/Glad/include"
 -- includeDirs["ImGui"] = "PieEngine/ThirdParty/imgui"
 -- includeDirs["glm"] = "PieEngine/ThirdParty/glm"
 -- includeDirs["stb_image"] = "PieEngine/ThirdParty/stb_image"
 
 include "../Frameworks/glfw"
--- include "PieEngine/ThirdParty/Glad"
+include "../Frameworks/Glad"
 -- include "PieEngine/ThirdParty/imgui"
 
 project "PieEngine"
@@ -96,8 +97,8 @@ project "PieEngine"
         "%{engineDirs.Foundation}",
         "%{engineDirs.Platforms}",
         "%{rootDirs.Frameworks}/spdlog/include",
-        "%{includeDirs.GLFW}"
-        -- "%{includeDirs.Glad}",
+        "%{includeDirs.GLFW}",
+        "%{includeDirs.Glad}"
         -- "%{includeDirs.ImGui}",
         -- "%{includeDirs.glm}",
         -- "%{includeDirs.stb_image}"
@@ -106,8 +107,8 @@ project "PieEngine"
     links
     {
         "GLFW",
-        "opengl32.lib"
-        -- "Glad",
+        "opengl32.lib",
+        "Glad"
         -- "ImGui",
     }
 

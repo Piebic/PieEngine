@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Acrylic/Renderer/GraphicsContext.h"
+#include "Renderer/GraphicsContext.h"
 
 struct GLFWwindow;
 
-namespace Acrylic {
+namespace PieGraphics {
 
 	class OpenGLContext: public GraphicsContext
 	{
@@ -12,7 +12,7 @@ namespace Acrylic {
 		OpenGLContext(GLFWwindow* windowHandle);
 
 		virtual void init() override;
-		virtual void SwapBuffers() override;
+		virtual void swapBuffers() override;
 	private:
 		GLFWwindow* m_WindowHandle;
 	};
