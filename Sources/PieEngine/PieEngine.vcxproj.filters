@@ -19,6 +19,15 @@
     <Filter Include="Foundation">
       <UniqueIdentifier>{9C8483D0-883C-C51D-F143-9E79DD1A600E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platforms">
+      <UniqueIdentifier>{DDACA145-4917-56BC-9255-0762FEFE3311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platforms\OpenGL">
+      <UniqueIdentifier>{719BB998-5D94-D8EA-86C6-BD6F721EB8F6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platforms\Windows">
+      <UniqueIdentifier>{17E40808-83FA-069E-CC71-92BF38C7D725}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App\App.h">
@@ -32,6 +41,9 @@
     </ClInclude>
     <ClInclude Include="Core\Logging\PieLog.h">
       <Filter>Core\Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Window.h">
+      <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="Events\Event.h">
       <Filter>Events</Filter>
@@ -50,6 +62,30 @@
     </ClInclude>
     <ClInclude Include="Pie.h" />
     <ClInclude Include="PieEngine.h" />
+    <ClInclude Include="Platforms\OpenGL\OpenGLBuffer.h">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Platforms\OpenGL\OpenGLContext.h">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Platforms\OpenGL\OpenGLRendererAPI.h">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Platforms\OpenGL\OpenGLShader.h">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Platforms\OpenGL\OpenGLTexture.h">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Platforms\OpenGL\OpenGLVertexArray.h">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Platforms\Windows\WindowsInput.h">
+      <Filter>Platforms\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Platforms\Windows\WindowsWindow.h">
+      <Filter>Platforms\Windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App\App.cpp">
@@ -59,5 +95,29 @@
       <Filter>Core\Logging</Filter>
     </ClCompile>
     <ClCompile Include="Pie.cpp" />
+    <ClCompile Include="Platforms\OpenGL\OpenGLBuffer.cpp">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Platforms\OpenGL\OpenGLContext.cpp">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Platforms\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Platforms\OpenGL\OpenGLShader.cpp">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Platforms\OpenGL\OpenGLTexture.cpp">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Platforms\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Platforms\Windows\WindowsInput.cpp">
+      <Filter>Platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Platforms\Windows\WindowsWindow.cpp">
+      <Filter>Platforms\Windows</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

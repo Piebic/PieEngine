@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>Pie.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN_API;BUILD_DLL;GLFW_INCLUDE_NONE;PIE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;..\..\Frameworks\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -88,6 +88,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\..\Builds\Output\PieEngine\Debug\PieEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -100,7 +101,7 @@
       <PrecompiledHeaderFile>Pie.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN_API;BUILD_DLL;GLFW_INCLUDE_NONE;PIE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;..\..\Frameworks\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -112,6 +113,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\..\Builds\Output\PieEngine\Release\PieEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -125,7 +127,7 @@
       <WarningLevel>Level3</WarningLevel>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN_API;BUILD_DLL;GLFW_INCLUDE_NONE;PIE_DISTRIBUTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;..\..\Frameworks\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -137,6 +139,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\..\Builds\Output\PieEngine\Distribution\PieEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -148,6 +151,7 @@
     <ClInclude Include="Core\Core.h" />
     <ClInclude Include="Core\EntryPoint.h" />
     <ClInclude Include="Core\Logging\PieLog.h" />
+    <ClInclude Include="Core\Window.h" />
     <ClInclude Include="Events\Event.h" />
     <ClInclude Include="Events\Events\ApplicationEvent.h" />
     <ClInclude Include="Events\Events\KeyEvent.h" />
@@ -155,15 +159,32 @@
     <ClInclude Include="Foundation\Foundation.h" />
     <ClInclude Include="Pie.h" />
     <ClInclude Include="PieEngine.h" />
+    <ClInclude Include="Platforms\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="Platforms\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="Platforms\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="Platforms\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="Platforms\OpenGL\OpenGLTexture.h" />
+    <ClInclude Include="Platforms\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="Platforms\Windows\WindowsInput.h" />
+    <ClInclude Include="Platforms\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App\App.cpp" />
     <ClCompile Include="Core\Logging\PieLog.cpp" />
-    <ClCompile Include="Pie.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="Pie.cpp" />
+    <ClCompile Include="Platforms\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="Platforms\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="Platforms\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="Platforms\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="Platforms\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="Platforms\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="Platforms\Windows\WindowsInput.cpp" />
+    <ClCompile Include="Platforms\Windows\WindowsWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Core/Core.h"
+#include "Core/Window.h"
 
 namespace Foundation {
 
@@ -12,6 +13,11 @@ namespace Foundation {
 
 		void run();
 
+		private:
+		std::unique_ptr<Core::Window> window;
+
+		bool isRunning = true;
+		bool isMinimized = false;
 	};
 
 	// To be defined in CLIENT

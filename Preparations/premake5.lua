@@ -4,6 +4,7 @@
 outputDirs = {}
 outputDirs["Engine"] = "PieEngine/%{cfg.buildcfg}"
 outputDirs["Sandbox"] = "Sandbox/%{cfg.buildcfg}"
+outputDirs["GLFW"] = "GLFW/%{cfg.buildcfg}"
 
 rootDirs = {}
 rootDirs["Builds"] = "../Builds"
@@ -16,6 +17,7 @@ engineDirs["App"] = "%{rootDirs.Sources}/PieEngine/App"
 engineDirs["Core"] = "%{rootDirs.Sources}/PieEngine/Core"
 engineDirs["Events"] = "%{rootDirs.Sources}/PieEngine/Events"
 engineDirs["Foundation"] = "%{rootDirs.Sources}/PieEngine/Foundation"
+engineDirs["Platforms"] = "%{rootDirs.Sources}/PieEngine/Platforms"
 
 sandboxDirs = {}
 sandboxDirs["Root"] = "%{rootDirs.Sources}/Sandbox"
@@ -34,14 +36,14 @@ workspace "PieEngine"
 
 
 -- Include directories relative to root folder (solution directory)
--- IncludeDir = {}
--- IncludeDir["GLFW"] = "PieEngine/ThirdParty/GLFW/include"
--- IncludeDir["Glad"] = "PieEngine/ThirdParty/Glad/include"
--- IncludeDir["ImGui"] = "PieEngine/ThirdParty/imgui"
--- IncludeDir["glm"] = "PieEngine/ThirdParty/glm"
--- IncludeDir["stb_image"] = "PieEngine/ThirdParty/stb_image"
+includeDirs = {}
+includeDirs["GLFW"] = "%{rootDirs.Frameworks}/glfw/include"
+-- includeDirs["Glad"] = "PieEngine/ThirdParty/Glad/include"
+-- includeDirs["ImGui"] = "PieEngine/ThirdParty/imgui"
+-- includeDirs["glm"] = "PieEngine/ThirdParty/glm"
+-- includeDirs["stb_image"] = "PieEngine/ThirdParty/stb_image"
 
--- include "PieEngine/ThirdParty/GLFW"
+include "../Frameworks/glfw"
 -- include "PieEngine/ThirdParty/Glad"
 -- include "PieEngine/ThirdParty/imgui"
 
@@ -70,7 +72,11 @@ project "PieEngine"
         "%{engineDirs.Events}/**.h",
         "%{engineDirs.Events}/**.cpp",
         "%{engineDirs.Foundation}/**.h",
-        "%{engineDirs.Foundation}/**.cpp"
+        "%{engineDirs.Foundation}/**.cpp",
+        "%{engineDirs.Platforms}/**.h",
+        "%{engineDirs.Platforms}/**.cpp",
+        "%{engineDirs.Platforms}/Windows/**.h",
+        "%{engineDirs.Platforms}/Windows/**.cpp"
         -- "%{prj.name}/ThirdParty/stb_image/**.h",
         -- "%{prj.name}/ThirdParty/stb_image/**.cpp",
         -- "%{prj.name}/ThirdParty/glm/glm/**.hpp",
@@ -88,20 +94,21 @@ project "PieEngine"
         "%{engineDirs.Core}",
         "%{engineDirs.Events}",
         "%{engineDirs.Foundation}",
-        "%{rootDirs.Frameworks}/spdlog/include"
-        -- "%{IncludeDir.GLFW}",
-        -- "%{IncludeDir.Glad}",
-        -- "%{IncludeDir.ImGui}",
-        -- "%{IncludeDir.glm}",
-        -- "%{IncludeDir.stb_image}"
+        "%{engineDirs.Platforms}",
+        "%{rootDirs.Frameworks}/spdlog/include",
+        "%{includeDirs.GLFW}"
+        -- "%{includeDirs.Glad}",
+        -- "%{includeDirs.ImGui}",
+        -- "%{includeDirs.glm}",
+        -- "%{includeDirs.stb_image}"
     }
 
     links
     {
-        -- "GLFW",
+        "GLFW",
+        "opengl32.lib"
         -- "Glad",
         -- "ImGui",
-        --  "opengl32.lib"
     }
 
     postbuildcommands
@@ -159,7 +166,7 @@ project "Sandbox"
     {
         "%{engineDirs.Root}",
         "%{rootDirs.Frameworks}/spdlog/include"
-        -- "%{IncludeDir.glm}"
+        -- "%{includeDirs.glm}"
     }
 
     links
