@@ -19,7 +19,7 @@ namespace PieEvents {
 		}
 
 		EVENT_CLASS_TYPE(WindowResize)
-			EVENT_CLASS_CATEGORY(App)
+		EVENT_CLASS_CATEGORY(App)
 		private:
 		unsigned int width, height;
 	};

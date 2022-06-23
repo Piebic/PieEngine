@@ -1,7 +1,11 @@
 #pragma once
 
 #include "../Core/Core.h"
-#include "Core/Window.h"
+
+#include "../Core/Window.h"
+#include "../Core/LayerStack.h"
+#include "../Events/Event.h"
+#include "../Events/Events/ApplicationEvent.h"
 
 namespace Foundation {
 
@@ -13,8 +17,14 @@ namespace Foundation {
 
 		void run();
 
+		void onEvent(PieEvents::Event& event);
+
+		void push(Core::Layer* layer);
+		void pushOverlay(Core::Layer* layer);
+
 		private:
 		std::unique_ptr<Core::Window> window;
+		Core::LayerStack layerStack;
 
 		bool isRunning = true;
 		bool isMinimized = false;

@@ -31,7 +31,7 @@ namespace Acrylic {
 		virtual void SetIntArray(const std::string& name, int* values, uint32_t count) override;
 		virtual void SetInt(const std::string& name, int value) override;
 
-		virtual const std::string& GetName() const override { return m_Name; }
+		virtual const std::string& name() const override { return m_Name; }
 
 		void UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
 		void UploadUniformMat3(const std::string& name, const glm::mat3& matrix);

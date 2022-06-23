@@ -39,6 +39,12 @@
     <ClInclude Include="Core\EntryPoint.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Layer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\LayerStack.h">
+      <Filter>Core</Filter>
+    </ClInclude>
     <ClInclude Include="Core\Logging\PieLog.h">
       <Filter>Core\Logging</Filter>
     </ClInclude>
@@ -90,6 +96,12 @@
   <ItemGroup>
     <ClCompile Include="App\App.cpp">
       <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Layer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\LayerStack.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Core\Logging\PieLog.cpp">
       <Filter>Core\Logging</Filter>

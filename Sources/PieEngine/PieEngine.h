@@ -5,6 +5,7 @@
 #include <cstdio>
 
 #include "App/App.h"
+#include "Core/Layer.h"
 #include "Core/Logging/PieLog.h"
 
 #include "Core/EntryPoint.h"
