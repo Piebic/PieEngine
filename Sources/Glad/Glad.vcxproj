@@ -54,20 +54,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\..\Frameworks\Builds\Output\GLAD\Debug\</OutDir>
-    <IntDir>..\..\Frameworks\Builds\Intermediate\GLAD\Debug\</IntDir>
+    <OutDir>..\..\Builds\Output\GLAD\Debug\</OutDir>
+    <IntDir>..\..\Builds\Intermediate\GLAD\Debug\</IntDir>
     <TargetName>Glad</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\..\Frameworks\Builds\Output\GLAD\Release\</OutDir>
-    <IntDir>..\..\Frameworks\Builds\Intermediate\GLAD\Release\</IntDir>
+    <OutDir>..\..\Builds\Output\GLAD\Release\</OutDir>
+    <IntDir>..\..\Builds\Intermediate\GLAD\Release\</IntDir>
     <TargetName>Glad</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
-    <OutDir>..\..\Frameworks\Builds\Output\GLAD\Distribution\</OutDir>
-    <IntDir>..\..\Frameworks\Builds\Intermediate\GLAD\Distribution\</IntDir>
+    <OutDir>..\..\Builds\Output\GLAD\Distribution\</OutDir>
+    <IntDir>..\..\Builds\Intermediate\GLAD\Distribution\</IntDir>
     <TargetName>Glad</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>

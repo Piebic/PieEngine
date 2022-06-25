@@ -2,7 +2,7 @@
 
 #include "Core/Core.h"
 
-namespace PieEvents {
+namespace Foundation {
 
 	// Events are blocking, meaning when event occurs it must to be dealt right then an there
 

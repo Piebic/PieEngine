@@ -17,10 +17,19 @@ namespace Foundation {
 
 		void run();
 
-		void onEvent(PieEvents::Event& event);
+		void onEvent(Foundation::Event& event);
 
 		void push(Core::Layer* layer);
 		void pushOverlay(Core::Layer* layer);
+
+		inline static App& get() { return *instance; }
+		inline Core::Window& getWindow() { return *window; }
+		
+		void close();
+
+		private:
+		bool onWindowClose(WindowCloseEvent& e);
+		bool onWindowResize(WindowResizeEvent& e);
 
 		private:
 		std::unique_ptr<Core::Window> window;
@@ -28,6 +37,9 @@ namespace Foundation {
 
 		bool isRunning = true;
 		bool isMinimized = false;
+
+		private:
+		static App* instance;
 	};
 
 	// To be defined in CLIENT

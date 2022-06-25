@@ -4,8 +4,8 @@ project "GLFW"
 	language "C"
 	staticruntime "off"
 
-    targetdir ("%{rootDirs.Builds}/Output/%{outputDirs.GLFW}")
-    objdir ("%{rootDirs.Builds}/Intermediate/%{outputDirs.GLFW}")
+    targetdir ("../%{rootDirs.Builds}/Output/%{outputDirs.GLFW}")
+    objdir ("../%{rootDirs.Builds}/Intermediate/%{outputDirs.GLFW}")
 
 	files
 	{

@@ -6,6 +6,7 @@ outputDirs["Engine"] = "PieEngine/%{cfg.buildcfg}"
 outputDirs["Sandbox"] = "Sandbox/%{cfg.buildcfg}"
 outputDirs["GLFW"] = "GLFW/%{cfg.buildcfg}"
 outputDirs["GLAD"] = "GLAD/%{cfg.buildcfg}"
+outputDirs["ImGui"] = "ImGui/%{cfg.buildcfg}"
 
 rootDirs = {}
 rootDirs["Builds"] = "../Builds"
@@ -19,6 +20,7 @@ engineDirs["Core"] = "%{rootDirs.Sources}/PieEngine/Core"
 engineDirs["Events"] = "%{rootDirs.Sources}/PieEngine/Events"
 engineDirs["Foundation"] = "%{rootDirs.Sources}/PieEngine/Foundation"
 engineDirs["Platforms"] = "%{rootDirs.Sources}/PieEngine/Platforms"
+engineDirs["UI"] = "%{rootDirs.Sources}/PieEngine/UI"
 
 sandboxDirs = {}
 sandboxDirs["Root"] = "%{rootDirs.Sources}/Sandbox"
@@ -40,13 +42,13 @@ workspace "PieEngine"
 includeDirs = {}
 includeDirs["GLFW"] = "%{rootDirs.Frameworks}/glfw/include"
 includeDirs["Glad"] = "%{rootDirs.Frameworks}/Glad/include"
--- includeDirs["ImGui"] = "PieEngine/ThirdParty/imgui"
+includeDirs["ImGui"] = "%{rootDirs.Frameworks}/imgui"
 -- includeDirs["glm"] = "PieEngine/ThirdParty/glm"
 -- includeDirs["stb_image"] = "PieEngine/ThirdParty/stb_image"
 
 include "../Frameworks/glfw"
 include "../Frameworks/Glad"
--- include "PieEngine/ThirdParty/imgui"
+include "../Frameworks/imgui"
 
 project "PieEngine"
     location ("%{rootDirs.Sources}/PieEngine")
@@ -60,7 +62,7 @@ project "PieEngine"
     objdir ("%{rootDirs.Builds}/Intermediate/%{outputDirs.Engine}")
 
     pchheader "Pie.h"
-    pchsource "%{engineDirs.Root}/Pie.cpp"
+    pchsource "PieEngine/Pie.cpp"
 
     files
     {
@@ -77,7 +79,9 @@ project "PieEngine"
         "%{engineDirs.Platforms}/**.h",
         "%{engineDirs.Platforms}/**.cpp",
         "%{engineDirs.Platforms}/Windows/**.h",
-        "%{engineDirs.Platforms}/Windows/**.cpp"
+        "%{engineDirs.Platforms}/Windows/**.cpp",
+        "%{engineDirs.UI}/**.h",
+        "%{engineDirs.UI}/**.cpp"
         -- "%{prj.name}/ThirdParty/stb_image/**.h",
         -- "%{prj.name}/ThirdParty/stb_image/**.cpp",
         -- "%{prj.name}/ThirdParty/glm/glm/**.hpp",
@@ -96,10 +100,11 @@ project "PieEngine"
         "%{engineDirs.Events}",
         "%{engineDirs.Foundation}",
         "%{engineDirs.Platforms}",
+        "%{engineDirs.UI}",
         "%{rootDirs.Frameworks}/spdlog/include",
         "%{includeDirs.GLFW}",
-        "%{includeDirs.Glad}"
-        -- "%{includeDirs.ImGui}",
+        "%{includeDirs.Glad}",
+        "%{includeDirs.ImGui}"
         -- "%{includeDirs.glm}",
         -- "%{includeDirs.stb_image}"
     }
@@ -108,8 +113,8 @@ project "PieEngine"
     {
         "GLFW",
         "opengl32.lib",
-        "Glad"
-        -- "ImGui",
+        "Glad",
+        "ImGui"
     }
 
     postbuildcommands

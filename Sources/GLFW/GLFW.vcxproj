@@ -54,20 +54,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\..\Frameworks\Builds\Output\GLFW\Debug\</OutDir>
-    <IntDir>..\..\Frameworks\Builds\Intermediate\GLFW\Debug\</IntDir>
+    <OutDir>..\..\Builds\Output\GLFW\Debug\</OutDir>
+    <IntDir>..\..\Builds\Intermediate\GLFW\Debug\</IntDir>
     <TargetName>GLFW</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\..\Frameworks\Builds\Output\GLFW\Release\</OutDir>
-    <IntDir>..\..\Frameworks\Builds\Intermediate\GLFW\Release\</IntDir>
+    <OutDir>..\..\Builds\Output\GLFW\Release\</OutDir>
+    <IntDir>..\..\Builds\Intermediate\GLFW\Release\</IntDir>
     <TargetName>GLFW</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
-    <OutDir>..\..\Frameworks\Builds\Output\GLFW\Distribution\</OutDir>
-    <IntDir>..\..\Frameworks\Builds\Intermediate\GLFW\Distribution\</IntDir>
+    <OutDir>..\..\Builds\Output\GLFW\Distribution\</OutDir>
+    <IntDir>..\..\Builds\Intermediate\GLFW\Distribution\</IntDir>
     <TargetName>GLFW</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>

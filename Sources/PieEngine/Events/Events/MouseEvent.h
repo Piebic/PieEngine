@@ -2,7 +2,7 @@
 
 #include "Events/Event.h"
 
-namespace PieEvents {
+namespace Foundation {
 
 	class PIE_API MouseMovedEvent: public Event {
 		public:

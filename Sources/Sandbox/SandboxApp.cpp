@@ -6,12 +6,13 @@ class ExampleLayer: public Core::Layer {
 
 	void update() override { logInfo("ExampleLayer update"); }
 
-	void handle(PieEvents::Event& event) override { logTrace("Event {0}", event); }
+	void handle(Foundation::Event& event) override { logTrace("Event {0}", event); }
 
 };
 
 SandboxApp::SandboxApp() {
 	push(new ExampleLayer());
+	pushOverlay(new Core::ImGuiLayer());
 }
 
 SandboxApp::~SandboxApp() { }

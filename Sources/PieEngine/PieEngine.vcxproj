@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>Pie.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN_API;BUILD_DLL;GLFW_INCLUDE_NONE;PIE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;UI;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;..\..\Frameworks\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -102,7 +102,7 @@
       <PrecompiledHeaderFile>Pie.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN_API;BUILD_DLL;GLFW_INCLUDE_NONE;PIE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;UI;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;..\..\Frameworks\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -129,7 +129,7 @@
       <WarningLevel>Level3</WarningLevel>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN_API;BUILD_DLL;GLFW_INCLUDE_NONE;PIE_DISTRIBUTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;UI;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;..\..\Frameworks\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -172,6 +172,7 @@
     <ClInclude Include="Platforms\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="Platforms\Windows\WindowsInput.h" />
     <ClInclude Include="Platforms\Windows\WindowsWindow.h" />
+    <ClInclude Include="UI\ImGuiLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App\App.cpp" />
@@ -187,6 +188,8 @@
     <ClCompile Include="Platforms\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="Platforms\Windows\WindowsInput.cpp" />
     <ClCompile Include="Platforms\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="UI\ImGuiBuild.cpp" />
+    <ClCompile Include="UI\ImGuiLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GLFW\GLFW.vcxproj">
@@ -194,6 +197,9 @@
     </ProjectReference>
     <ProjectReference Include="..\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ImGui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

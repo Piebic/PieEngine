@@ -16,7 +16,7 @@ namespace Core {
 		//virtual void update(TimeStep timeStep) { }
 		virtual void update() { }
 		virtual void imGuiRender() { };
-		virtual void handle(PieEvents::Event& event) { }
+		virtual void handle(Foundation::Event& event) { }
 
 		inline const std::string& name() const { return debugName; }
 

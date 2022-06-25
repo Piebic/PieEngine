@@ -28,6 +28,9 @@
     <Filter Include="Platforms\Windows">
       <UniqueIdentifier>{17E40808-83FA-069E-CC71-92BF38C7D725}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{83755900-6F01-880B-D8AF-880BC45A880B}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App\App.h">
@@ -92,6 +95,9 @@
     <ClInclude Include="Platforms\Windows\WindowsWindow.h">
       <Filter>Platforms\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="UI\ImGuiLayer.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App\App.cpp">
@@ -130,6 +136,12 @@
     </ClCompile>
     <ClCompile Include="Platforms\Windows\WindowsWindow.cpp">
       <Filter>Platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\ImGuiBuild.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\ImGuiLayer.cpp">
+      <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

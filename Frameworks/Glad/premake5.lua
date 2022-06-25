@@ -4,8 +4,8 @@ project "Glad"
     language "C"
     staticruntime "on"
 
-    targetdir ("%{rootDirs.Builds}/Output/%{outputDirs.GLAD}")
-    objdir ("%{rootDirs.Builds}/Intermediate/%{outputDirs.GLAD}")
+    targetdir ("../%{rootDirs.Builds}/Output/%{outputDirs.GLAD}")
+    objdir ("../%{rootDirs.Builds}/Intermediate/%{outputDirs.GLAD}")
 
     files
     {
