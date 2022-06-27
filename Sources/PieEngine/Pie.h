@@ -14,6 +14,8 @@
 #include <unordered_set>
 
 #include "Core/Logging/PieLog.h"
+#include "Core/KeyCodes.h"
+#include "Core/MouseCodes.h"
 
 //#include "Acrylic/Debug/Instrumentor.h"
 

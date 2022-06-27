@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>Pie.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN_API;BUILD_DLL;GLFW_INCLUDE_NONE;PIE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;UI;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;..\..\Frameworks\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;UI;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;..\..\Frameworks\imgui;..\..\Frameworks\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -102,7 +102,7 @@
       <PrecompiledHeaderFile>Pie.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN_API;BUILD_DLL;GLFW_INCLUDE_NONE;PIE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;UI;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;..\..\Frameworks\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;UI;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;..\..\Frameworks\imgui;..\..\Frameworks\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -129,7 +129,7 @@
       <WarningLevel>Level3</WarningLevel>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN_API;BUILD_DLL;GLFW_INCLUDE_NONE;PIE_DISTRIBUTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;UI;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;..\..\Frameworks\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;App;Core;Events;Foundation;Platforms;UI;..\..\Frameworks\spdlog\include;..\..\Frameworks\glfw\include;..\..\Frameworks\Glad\include;..\..\Frameworks\imgui;..\..\Frameworks\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -153,9 +153,12 @@
     <ClInclude Include="App\App.h" />
     <ClInclude Include="Core\Core.h" />
     <ClInclude Include="Core\EntryPoint.h" />
+    <ClInclude Include="Core\Input.h" />
+    <ClInclude Include="Core\KeyCodes.h" />
     <ClInclude Include="Core\Layer.h" />
     <ClInclude Include="Core\LayerStack.h" />
     <ClInclude Include="Core\Logging\PieLog.h" />
+    <ClInclude Include="Core\MouseCodes.h" />
     <ClInclude Include="Core\Window.h" />
     <ClInclude Include="Events\Event.h" />
     <ClInclude Include="Events\Events\ApplicationEvent.h" />
@@ -170,7 +173,6 @@
     <ClInclude Include="Platforms\OpenGL\OpenGLShader.h" />
     <ClInclude Include="Platforms\OpenGL\OpenGLTexture.h" />
     <ClInclude Include="Platforms\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="Platforms\Windows\WindowsInput.h" />
     <ClInclude Include="Platforms\Windows\WindowsWindow.h" />
     <ClInclude Include="UI\ImGuiLayer.h" />
   </ItemGroup>

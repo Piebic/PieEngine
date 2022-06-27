@@ -24,7 +24,7 @@ namespace Core {
 		void setVSync(bool enabled) override;
 		bool isVSync() const override;
 
-		inline virtual void* GetNativeWindow() const { return window; }
+		inline virtual void* getNativeWindow() const { return window; }
 
 		private:
 		virtual void init(const WindowInfo& info);

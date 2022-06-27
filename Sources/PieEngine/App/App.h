@@ -7,6 +7,8 @@
 #include "../Events/Event.h"
 #include "../Events/Events/ApplicationEvent.h"
 
+#include "UI/ImGuiLayer.h"
+
 namespace Foundation {
 
 	class PIE_API App {
@@ -22,8 +24,8 @@ namespace Foundation {
 		void push(Core::Layer* layer);
 		void pushOverlay(Core::Layer* layer);
 
-		inline static App& get() { return *instance; }
-		inline Core::Window& getWindow() { return *window; }
+		static App& get() { return *instance; }
+		Core::Window& getWindow() { return *window; }
 		
 		void close();
 
@@ -34,6 +36,7 @@ namespace Foundation {
 		private:
 		std::unique_ptr<Core::Window> window;
 		Core::LayerStack layerStack;
+		Core::ImGuiLayer* imGuiLayer;
 
 		bool isRunning = true;
 		bool isMinimized = false;
@@ -43,6 +46,6 @@ namespace Foundation {
 	};
 
 	// To be defined in CLIENT
-	App* CreateApp();
+	App* get();
 
 }

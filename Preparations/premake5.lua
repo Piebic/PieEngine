@@ -43,7 +43,7 @@ includeDirs = {}
 includeDirs["GLFW"] = "%{rootDirs.Frameworks}/glfw/include"
 includeDirs["Glad"] = "%{rootDirs.Frameworks}/Glad/include"
 includeDirs["ImGui"] = "%{rootDirs.Frameworks}/imgui"
--- includeDirs["glm"] = "PieEngine/ThirdParty/glm"
+includeDirs["glm"] = "%{rootDirs.Frameworks}/glm"
 -- includeDirs["stb_image"] = "PieEngine/ThirdParty/stb_image"
 
 include "../Frameworks/glfw"
@@ -84,8 +84,6 @@ project "PieEngine"
         "%{engineDirs.UI}/**.cpp"
         -- "%{prj.name}/ThirdParty/stb_image/**.h",
         -- "%{prj.name}/ThirdParty/stb_image/**.cpp",
-        -- "%{prj.name}/ThirdParty/glm/glm/**.hpp",
-        -- "%{prj.name}/ThirdParty/glm/glm/**.inl"
     }
 
     defines {
@@ -104,8 +102,8 @@ project "PieEngine"
         "%{rootDirs.Frameworks}/spdlog/include",
         "%{includeDirs.GLFW}",
         "%{includeDirs.Glad}",
-        "%{includeDirs.ImGui}"
-        -- "%{includeDirs.glm}",
+        "%{includeDirs.ImGui}",
+        "%{includeDirs.glm}"
         -- "%{includeDirs.stb_image}"
     }
 
@@ -171,8 +169,8 @@ project "Sandbox"
     includedirs
     {
         "%{engineDirs.Root}",
-        "%{rootDirs.Frameworks}/spdlog/include"
-        -- "%{includeDirs.glm}"
+        "%{rootDirs.Frameworks}/spdlog/include",
+        "%{includeDirs.glm}"
     }
 
     links

@@ -1,5 +1,5 @@
 #include "Pie.h"
-#include "App.h"
+#include "App/App.h"
 
 #include "../Core/Logging/PieLog.h"
 
@@ -16,6 +16,9 @@ namespace Foundation {
 
 		instance = this;
 		window = std::unique_ptr<Core::Window>(Core::Window::create());
+		window->setEventCallback(BIND_EVENT_FN(onEvent));
+		imGuiLayer = new Core::ImGuiLayer();
+		pushOverlay(imGuiLayer);
 	}
 
 	App::~App() { }
@@ -34,19 +37,19 @@ namespace Foundation {
 					//ACR_PROFILE_SCOPE("LayerStack OnUpdate.");
 
 					for (Core::Layer* layer : layerStack)
-						//layer->update(timeStep);
+						layer->update();
 				}
 
-				//imGuiLayer->Begin();
+				imGuiLayer->begin();
 
 				{
 					//ACR_PROFILE_SCOPE("LayerStack OnImGuiRender.");
 
 					for (Core::Layer* layer : layerStack)
-						//layer->OnImGuiRender();
+						layer->imGuiRender();
 				}
 
-				//imGuiLayer->End();
+				imGuiLayer->end();
 			}
 
 			window->update();
@@ -55,8 +58,8 @@ namespace Foundation {
 
 	void App::onEvent(Foundation::Event& event) {
 		Foundation::EventDispatcher dispatcher(event);
-		//dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
-		//dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(Foundation::App::OnWindowResize));
+		dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FN(Foundation::App::onWindowClose));
+		dispatcher.dispatch<WindowResizeEvent>(BIND_EVENT_FN(Foundation::App::onWindowResize));
 
 		logPieTrace("{0}", event);
 

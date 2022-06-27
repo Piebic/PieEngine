@@ -1,4 +1,4 @@
-#include "../Pie.h"
+#include "Pie.h"
 #include "ImGuiLayer.h"
 
 #include "imgui.h"
@@ -7,7 +7,7 @@
 #include "backends/imgui_impl_opengl3.h"
 #include "backends/imgui_impl_glfw.h"
 
-#include "../App/App.h"
+#include "App/App.h"
 
 //TEMP
 #include "GLFW/glfw3.h"
@@ -41,11 +41,12 @@ namespace Core {
 		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
 
-		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoTaskBarIcons;
-		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoMerge;
+		/*io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoTaskBarIcons;
+		io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoMerge;*/
 
 		// Setup Dear ImGui style
-		ImGui::StyleColorsDark();
+		//ImGui::StyleColorsDark();
+		ImGui::StyleColorsClassic();
 
 		// When viewports are enabled we tweak WindowRounding/WindowBg so playform widnows can look identical to regularones
 		ImGuiStyle& style = ImGui::GetStyle();
@@ -69,6 +70,8 @@ namespace Core {
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
 	}
+
+	void ImGuiLayer::handle(Foundation::Event& e) { }
 
 	void ImGuiLayer::begin() {
 		//ACR_PROFILE_FUNCTION();
@@ -98,5 +101,7 @@ namespace Core {
 		}
 
 	}
+
+	void ImGuiLayer::setDarkThemeColors() { }
 
 }

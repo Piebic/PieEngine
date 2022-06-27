@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Core/Layer.h"
+
 #include "../Events/Events/ApplicationEvent.h"
 #include "../Events/Events/KeyEvent.h"
 #include "../Events/Events/MouseEvent.h"
@@ -15,12 +16,17 @@ namespace Core {
 
 		virtual void attach() override;
 		virtual void detach() override;
+		virtual void handle(Foundation::Event& e) override;
 
 		void begin();
 		void end();
 
+		void blockEvents(bool block) { isBlockingEvents = block; }
+
+		void setDarkThemeColors();
+
 	private:
-		float time = 0.0f;
+		bool isBlockingEvents = true;
 	};
 
 }
